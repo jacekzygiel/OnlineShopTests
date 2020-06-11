@@ -1,7 +1,7 @@
 context("Inventory", () => {
 
     beforeEach(() => {
-        cy.setSessionStorage("session-username", "standard_user")
+        cy.setSessionStorage("session-username", "standard_user");
         cy.setSessionStorage("cart-contents", "[]");
         cy.visit("/inventory.html");
     });

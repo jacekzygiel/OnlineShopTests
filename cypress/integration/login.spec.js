@@ -20,7 +20,7 @@ context("Login", () => {
                 .should("contain", "inventory");
             cy.get(".product_label")
                 .should("be.visible");
-            cy.getSessionStorage("session-username").should("eq", "standard_user")
+            cy.getSessionStorage("session-username").should("eq", "standard_user");
         });
     });
 });
