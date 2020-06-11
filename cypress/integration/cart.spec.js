@@ -1,4 +1,4 @@
-context("Cart", () => {
+context("Cart Page", () => {
 
     beforeEach(() => {
         cy.setSessionStorage("session-username", "standard_user");
@@ -6,8 +6,8 @@ context("Cart", () => {
         cy.visit("cart.html");
     });
 
-    describe("Product", () => {
-        it("remove item from cart", () => {
+    describe("Items", () => {
+        it("removes item from cart", () => {
             cy.get(".cart_list .cart_item")
                 .first().as("firstItem");
 

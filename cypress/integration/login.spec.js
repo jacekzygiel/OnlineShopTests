@@ -1,4 +1,4 @@
-context("Login", () => {
+context("Login page", () => {
     let usersData;
 
     before(() => {
@@ -9,8 +9,8 @@ context("Login", () => {
         cy.visit("/");
     });
 
-    describe("Registered user", () => {
-        it("can login", () => {
+    describe("User login", () => {
+        it("should allow registered user to login", () => {
             let user = usersData.standard_user;
             cy.visit("/");
             cy.get("[data-test=username]").type(user.login);
@@ -18,9 +18,8 @@ context("Login", () => {
             cy.get(".btn_action").click();
             cy.url()
                 .should("contain", "inventory");
-            cy.get(".product_label")
-                .should("be.visible");
-            cy.getSessionStorage("session-username").should("eq", "standard_user");
-        });
+            cy.getSessionStorage("session-username")
+                .should("eq", "standard_user");
+            });
     });
 });
