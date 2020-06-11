@@ -4,7 +4,8 @@
   "description": "Test automation of purchase flow on saucedemo.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint \"**/*.js\" --fix",
+    "test": "cypress run",
     "cypress:open": "cypress open"
   },
   "author": "jacekzygiel@gmail.com",
