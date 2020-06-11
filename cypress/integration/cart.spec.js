@@ -2,6 +2,10 @@ context("Cart", () => {
 
     beforeEach(() => {
        cy.setSessionStorage("cart-contents", "[4, 3]");
+       cy.fixture('users').then((users) => {
+           cy.visit("/")
+           cy.login(users.standard_user.login, users.standard_user.password)
+        })
        cy.visit("cart.html");
     });
 
