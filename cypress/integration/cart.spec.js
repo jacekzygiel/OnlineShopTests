@@ -1,8 +1,9 @@
 context("Cart", () => {
 
     beforeEach(() => {
-       cy.setSessionStorage("cart-contents", "[4, 3]");
-       cy.visit("cart.html");
+        cy.setSessionStorage("session-username", "standard_user")
+        cy.setSessionStorage("cart-contents", "[4, 3]");
+        cy.visit("cart.html");
     });
 
     describe("Product", () => {
@@ -17,6 +18,5 @@ context("Cart", () => {
             cy.get(".cart_item").should("have.length", 1);
             cy.getSessionStorage("cart-contents").should("eq", "[3]");
         });
-
     });
 });

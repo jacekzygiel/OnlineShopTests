@@ -1,6 +1,7 @@
 context("Inventory", () => {
 
     beforeEach(() => {
+        cy.setSessionStorage("session-username", "standard_user")
         cy.setSessionStorage("cart-contents", "[]");
         cy.visit("/inventory.html");
     });
@@ -17,6 +18,5 @@ context("Inventory", () => {
             cy.get(".shopping_cart_badge").should("have.text", "1");
             cy.getSessionStorage("cart-contents").should("eq", "[4]");
         });
-
     });
 });
