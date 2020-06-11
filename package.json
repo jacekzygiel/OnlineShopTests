@@ -4,7 +4,8 @@
   "description": "Test automation of purchase flow on saucedemo.com",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint \"**/*.js\" --fix",
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
     "test": "cypress run",
     "cypress:open": "cypress open"
   },
