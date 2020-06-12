@@ -1,27 +1,28 @@
 {
-  "bikeLight": {
-    "id": 0,
-    "name":  "Sauce Labs Bike Light"
-  },
-  "boltShirt": {
-    "id": 1,
-    "name": "Sauce Labs Bolt T-Shirt"
-  },
-  "redOnesie": {
-    "id": 2,
-    "name": "Sauce Labs Onesie"
-  },
-  "redTatt": {
-    "id": 3,
-    "name": "Test.allTheThings() T-Shirt (Red)"
-  },
-  "sauceBackpack": {
-    "id": 4,
-    "name": "Sauce Labs Backpack"
-  },
-  "saucePullover": {
-    "id": 5,
-    "name": "Sauce Labs Fleece Jacket"
-  }
-
+  "items": [
+    {
+      "id": 0,
+      "name":  "Sauce Labs Bike Light"
+    },
+    {
+      "id": 1,
+      "name": "Sauce Labs Bolt T-Shirt"
+    },
+    {
+      "id": 2,
+      "name": "Sauce Labs Onesie"
+    },
+    {
+      "id": 3,
+      "name": "Test.allTheThings() T-Shirt (Red)"
+    },
+    {
+      "id": 4,
+      "name": "Sauce Labs Backpack"
+    },
+    {
+      "id": 5,
+      "name": "Sauce Labs Fleece Jacket"
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 context("Inventory Page", () => {
 
     beforeEach(() => {
-        cy.setSessionStorage("session-username", "standard_user");
-        cy.setSessionStorage("cart-contents", "[]");
+        cy.setUserSessionStorage("standard_user");
+        cy.setCartSessionStorage("[]");
         cy.visit("/inventory.html");
     });
 
@@ -17,12 +17,12 @@ context("Inventory Page", () => {
 
             cy.get(".shopping_cart_badge")
                 .should("have.text", "1");
-            cy.getSessionStorage("cart-contents")
+            cy.getCartSessionStorage()
                 .should("eq", "[4]");
         });
 
         it("removes stored item from cart", () => {
-            cy.setSessionStorage("cart-contents", "[4]");
+            cy.setCartSessionStorage("[4]");
             cy.reload();
             cy.get(".inventory_list .inventory_item")
                 .first().as("firstItem");
@@ -33,7 +33,7 @@ context("Inventory Page", () => {
 
             cy.get(".shopping_cart_badge")
                 .should("not.be.visible");
-            cy.getSessionStorage("cart-contents")
+            cy.getCartSessionStorage()
                 .should("eq", "[]");
         });
     });

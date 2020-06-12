@@ -9,11 +9,9 @@ context("Checkout Page", () => {
     });
 
     beforeEach(() => {
-        cart = [];
-        cart.push(inventory.sauceBackpack.id);
-        cart.push(inventory.redTatt.id);
-        cy.setSessionStorage("session-username", "standard_user");
-        cy.setSessionStorage("cart-contents", "[" + cart.join(",") + "]");
+        cart = [4, 3];
+        cy.setUserSessionStorage("standard_user");
+        cy.setCartSessionStorage("[" + cart.join(",") + "]");
     });
 
     describe("Cart summary", () => {
@@ -23,19 +21,18 @@ context("Checkout Page", () => {
             cy.get("@cart_items")
                 .should("have.length", 2);
 
-            cy.get("@cart_items")
-                .first()
-                .find(".inventory_item_name")
-                .should("have.text", inventory.sauceBackpack.name);
-            cy.get("@cart_items")
-                .eq(1)
-                .find(".inventory_item_name")
-                .should("have.text", inventory.redTatt.name);
+            cy.wrap(cart).each((id, i) => {
+                cy.log(i);
+                cy.get("@cart_items")
+                    .eq(i)
+                    .find(".inventory_item_name")
+                    .should("have.text", inventory.items[id].name);
+            });
         });
     });
 
     describe("Order flow", () => {
-        it("places an order", () => {
+        it("places an order through checkout flow", () => {
             let user = usersData.standard_user;
             cy.visit("checkout-step-one.html");
             cy.get("[data-test=firstName]").type(user.firstName);

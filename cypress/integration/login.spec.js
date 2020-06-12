@@ -6,6 +6,7 @@ context("Login page", () => {
     });
 
     beforeEach(() => {
+        cy.setUserSessionStorage("");
         cy.visit("/");
     });
 
@@ -15,7 +16,7 @@ context("Login page", () => {
             cy.login(user.login, user.password);
             cy.url()
                 .should("contain", "inventory");
-            cy.getSessionStorage("session-username")
+            cy.getUserSessionStorage()
                 .should("eq", "standard_user");
             });
     });
