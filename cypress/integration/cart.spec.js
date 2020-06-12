@@ -15,8 +15,10 @@ context("Cart Page", () => {
                 .find(".btn_secondary")
                 .click();
 
-            cy.get(".cart_item").should("have.length", 1);
-            cy.getSessionStorage("cart-contents").should("eq", "[3]");
+            cy.get(".cart_item")
+                .should("have.length", 1);
+            cy.getSessionStorage("cart-contents")
+                .should("eq", "[3]");
         });
     });
 });
