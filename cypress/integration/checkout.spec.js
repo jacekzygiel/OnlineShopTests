@@ -10,29 +10,21 @@ context("Checkout Page", () => {
         cy.setSessionStorage("cart-contents", "[4, 3]");
     });
 
-    describe("User information", () => {
-        it("fills user information", () => {
+    describe("Order flow", () => {
+        it("places an order", () => {
             let user = usersData.standard_user;
             cy.visit("checkout-step-one.html");
             cy.get('[data-test=firstName]').type(user.firstName)
             cy.get('[data-test=lastName]').type(user.lastName)
-            cy.get('[data-test=lastName]').type(user.zip)
+            cy.get('[data-test=postalCode]').type(user.zip)
             cy.get('.btn_primary').click()
-        })
-    })
 
-    describe("Cart summary", () => {
-        it("should display cart summary containing all added elements", () => {
-            cy.visit("checkout-step-two.html");
+            cy.url()
+                .should("contain", "checkout-step-two");
             cy.get(".cart_list .cart_item")
                 .should("have.length", 2)
-        });
-    });
-
-    describe("Place order", () => {
-        it("places an order", () => {
-            cy.visit("checkout-step-two.html");
             cy.get('.btn_action').click()
+
             cy.url()
                 .should("contain", "checkout-complete");
             cy.get('#checkout_complete_container')
