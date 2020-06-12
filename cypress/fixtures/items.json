@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": 0,
+      "name":  "Sauce Labs Bike Light"
+    },
+    {
+      "id": 1,
+      "name": "Sauce Labs Bolt T-Shirt"
+    },
+    {
+      "id": 2,
+      "name": "Sauce Labs Onesie"
+    },
+    {
+      "id": 3,
+      "name": "Test.allTheThings() T-Shirt (Red)"
+    },
+    {
+      "id": 4,
+      "name": "Sauce Labs Backpack"
+    },
+    {
+      "id": 5,
+      "name": "Sauce Labs Fleece Jacket"
+    }
+  ]
+}

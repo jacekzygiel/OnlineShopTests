@@ -1,0 +1,19 @@
+{
+  "name": "testautomationpurchaseflow",
+  "version": "1.0.0",
+  "description": "Test automation of purchase flow on saucedemo.com",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ignore-path .gitignore .",
+    "test": "cypress run",
+    "cypress:open": "cypress open"
+  },
+  "author": "jacekzygiel@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^4.8.0",
+    "eslint": "^7.2.0",
+    "eslint-plugin-cypress": "^2.11.1"
+  }
+}
